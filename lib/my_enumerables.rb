@@ -57,6 +57,14 @@ module Enumerable
       return self.length
     end
   end
+
+  def my_map
+    mapped_array = Array.new
+    for i in 0...self.length do
+      mapped_array << yield(self[i])
+    end
+    mapped_array
+  end
 end
 
 # You will first have to define my_each
