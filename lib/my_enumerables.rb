@@ -16,6 +16,15 @@ module Enumerable
     end
     filtered_array
   end
+
+  def my_all?
+    for i in 0...self.length do
+      if yield(self[i]) == false
+        return false
+      end
+    end
+    true
+  end
 end
 
 # You will first have to define my_each
