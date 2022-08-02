@@ -65,6 +65,13 @@ module Enumerable
     end
     mapped_array
   end
+
+  def my_inject(memo=self[0])
+    for i in 0...self.length do
+      memo = yield(memo, self[i])
+    end
+    memo
+  end
 end
 
 # You will first have to define my_each
