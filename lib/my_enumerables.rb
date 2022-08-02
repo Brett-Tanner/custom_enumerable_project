@@ -6,6 +6,16 @@ module Enumerable
     end
     return self
   end
+
+  def my_select
+    filtered_array = Array.new
+    for i in 0...self.length do
+      if yield(self[i]) == true
+        filtered_array << self[i]
+      end
+    end
+    filtered_array
+  end
 end
 
 # You will first have to define my_each
